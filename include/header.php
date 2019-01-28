@@ -11,7 +11,7 @@
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</a>
+        <a class="navbar-brand" href="/calendario"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +24,7 @@
                     <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> Pesquisar</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Avisos</a>
+                    <a class="nav-link" href="/calendario/view/warning.php"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Avisos</a>
                 </li>
             </ul>
         </div>

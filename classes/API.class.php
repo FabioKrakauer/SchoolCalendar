@@ -28,4 +28,7 @@ class API{
     public static function getMatterByID($id){
         return API::getMatters()[$id];
     }
+    public static function getCategoryByID($id){
+        return API::categoryName()[$id];
+    }
 }

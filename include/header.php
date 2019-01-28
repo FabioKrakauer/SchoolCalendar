@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fa fa-book" aria-hidden="true"></i> Nova tarefa </a>
+                    <a class="nav-link" href="/calendario/view/novaTarefa.php"><i class="fa fa-book" aria-hidden="true"></i> Nova tarefa </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> Pesquisar</a>

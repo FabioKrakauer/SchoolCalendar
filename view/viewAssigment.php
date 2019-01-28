@@ -30,7 +30,7 @@ if(isset($_GET["tarefa"])){
         <div class="row">
             <div class="form-group col-12">
                 <label for="description">Descrição</label>
-                <textarea name="description" disabled id="description" cols="30" placeholder="Descrição" class="form-control"><?= $assigment->getDescription() ?></textarea>
+                <textarea name="description" disabled required id="description" cols="30" placeholder="Descrição" class="form-control"><?= $assigment->getDescription() ?></textarea>
             </div>
         </div>
         <div class="row">

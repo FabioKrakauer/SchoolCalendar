@@ -21,7 +21,7 @@
                     <a class="nav-link" href="/calendario/view/novaTarefa.php"><i class="fa fa-book" aria-hidden="true"></i> Nova tarefa </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> Pesquisar</a>
+                    <a class="nav-link" href="/calendario/view/search.php"><i class="fa fa-search" aria-hidden="true"></i> Pesquisar</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/calendario/view/warning.php"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Avisos</a>

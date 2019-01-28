@@ -1,0 +1,7 @@
+{
+    "ip":"localhost",
+    "database":"ramacciotti_estoque",
+    "port":3306,
+    "user":"root",
+    "password":""
+}

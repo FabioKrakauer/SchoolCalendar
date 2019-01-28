@@ -1,6 +1,6 @@
 {
     "ip":"localhost",
-    "database":"ramacciotti_estoque",
+    "database":"calendar",
     "port":3306,
     "user":"root",
     "password":""

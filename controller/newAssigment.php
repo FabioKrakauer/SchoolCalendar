@@ -3,6 +3,7 @@
 $dir = realpath(__DIR__ . '/..');
 require_once $dir.'/config/config.php';
 require_once $dir.'/classes/DB.class.php';
+require_once $dir.'/classes/Auth.class.php';
 
 if(isset($_POST["action"])){
     $db = new DB();
@@ -12,5 +13,7 @@ if(isset($_POST["action"])){
     $date = $_POST["date"];
     $today = date("Y-m-d");
     $id = $db->insertGetLastID("INSERT INTO `assignment` (`id`, `category`, `matter`, `description`, `lanced_date`, `date_confirm`) VALUES (NULL, '$category', '$matter', '$description', '$today', '$date')");
+    
+    Auth::log("Criou a tarefa a tarefa ". $id . " - " . $date);
     header("Location: /calendario/view/viewAssigment.php?tarefa=".$id);
 }

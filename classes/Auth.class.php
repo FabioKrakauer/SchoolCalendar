@@ -68,9 +68,8 @@
             $_COOKIE["auth"] = null;
         }
         public static function log($message){
-            $db = new DB();
             $day = date("Y-m-d H:i:s", time());
-            $id = Auth::user()->getID();
+            $id = Auth::user();
             $query = "INSERT INTO `admin_log` (`id`, `user_id`, `action`, `datestamp`) VALUES (NULL, '$id', '$message', '$day')";
             $db = new DB();
             $db->query($query);

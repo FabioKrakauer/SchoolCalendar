@@ -27,7 +27,7 @@ include APP_ROOT . "/include/header.php";
                 </select>
             </div>
             <div class="form-group col-12 col-md-4">
-                <label for="matter">Selecione uma nateria</label>
+                <label for="matter">Selecione uma materia</label>
                 <select name="matter" id="matter" class="form-control">
                 <option value="null">Selecione uma opção</option>
                     <?php 

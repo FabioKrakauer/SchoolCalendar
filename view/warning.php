@@ -22,10 +22,17 @@ while($foundDanger = $danger_warn->fetch()){
     <strong>'.$assigment->getName().'</strong>
     <p class="d-inline">Para o dia: '.date("d/m/Y", strtotime($assigment->getDateConfirm())).'</p> ';
     ?>
-    <form action="viewAssigment.php">
+    <form action="viewAssigment.php" class="d-inline">
         <input type="hidden" name="tarefa" value="<?= $assigment->getID() ?>">
-        <button type="submit" class="btn btn-danger"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></i> Detalhes</button>
+        <button type="submit" class="btn btn-danger"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Detalhes</button>
     </form>
+    <?php
+        if(Auth::isLogged(false)){ ?>
+        <form action="deleteAssigment.php" method="post" onsubmit="return confirm('Deseja deletar a <?= $assigment->getName() ?>')" class="d-inline">
+            <input type="hidden" name="tarefa" value="<?= $assigment->getID() ?>">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-times" aria-hidden="true"></i> Deletar</button>
+        </form>
+    <?php } ?>
     </div>
 <?php }
 ?>
@@ -44,7 +51,7 @@ while($foundDanger = $danger_warn->fetch()){
     ?>
     <form action="viewAssigment.php">
         <input type="hidden" name="tarefa" value="<?= $assigment->getID() ?>">
-        <button type="submit" class="btn btn-warning"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></i> Detalhes</button>
+        <button type="submit" class="btn btn-warning"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Detalhes</button>
     </form>
     </div>
 <?php }
@@ -65,7 +72,7 @@ while($foundDanger = $danger_warn->fetch()){
     ?>
     <form action="viewAssigment.php">
         <input type="hidden" name="tarefa" value="<?= $assigment->getID() ?>">
-        <button type="submit" class="btn btn-success"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></i> Detalhes</button>
+        <button type="submit" class="btn btn-success"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Detalhes</button>
     </form>
     </div>
 <?php }

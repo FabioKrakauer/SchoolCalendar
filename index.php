@@ -3,7 +3,7 @@
 $dir = realpath(__DIR__ . '/');
 require_once $dir.'/config/config.php';
 require_once $dir.'/classes/DB.class.php';
-require_once $dir.'/classes/Auth.class.php';
+require_once APP_ROOT . '/classes/Auth.class.php';
 
 include APP_ROOT . '/include/header.php';
 ?>
@@ -14,4 +14,5 @@ include APP_ROOT . '/include/header.php';
         <a href="/calendario/view/warning.php" class="btn btn-danger text-white">Ver avisos</a>
     </div>
 <?php
+
 include APP_ROOT . '/include/footer.php'; ?>

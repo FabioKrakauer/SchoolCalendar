@@ -53,7 +53,7 @@
     if(isset($_POST["user"])){
         $result = Auth::validate($_POST["user"], md5($_POST["pass"]));
         if($result == -1){
-            exit(header("Location: login.php?error=Email ou senha ínvalidos!"));
+            exit(header("Location: login.php?error=Usuario ou senha ínvalidos!"));
         }else{
             header("Location: /calendario/index.php");
         }

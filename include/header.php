@@ -1,3 +1,8 @@
+<?php
+$dir = realpath(__DIR__ . '/..');
+require_once $dir.'/config/config.php';
+require_once $dir.'/classes/Auth.class.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,9 +22,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/calendario/view/novaTarefa.php"><i class="fa fa-book" aria-hidden="true"></i> Nova tarefa </a>
-                </li>
+                <?php 
+                    if(Auth::isLogged(false)){
+                        echo '<li class="nav-item active">
+                                <a class="nav-link" href="/calendario/view/novaTarefa.php"><i class="fa fa-book" aria-hidden="true"></i> Nova tarefa </a>
+                            </li>';
+                    }
+                ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="/calendario/view/search.php"><i class="fa fa-search" aria-hidden="true"></i> Pesquisar</a>
                 </li>
@@ -27,6 +36,26 @@
                     <a class="nav-link" href="/calendario/view/warning.php"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Avisos</a>
                 </li>
             </ul>
+            <?php 
+                if(!Auth::isLogged(false)){
+            ?>
+                <div class="ml-auto">
+                    <a class="text-white" href="/calendario/view/login.php"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Logar</a>
+                </div>
+          <?php }else{
+              $name = Auth::user();
+              ?>
+              <div class="dropdown ml-auto">
+                <button class="btn text-white dropdown-toggle bg-dark" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Olá, <?php echo $name; ?>
+                </button>
+                <div class="dropdown-menu bg-light" aria-labelledby="dropdownMenu2">
+                    <a href="/calendario/controller/logout.php" class="dropdown-item ">Sair</a>
+                </div>
+            </div>
+          <?php } 
+            ?>
         </div>
     </nav>
   </body>

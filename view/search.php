@@ -105,4 +105,4 @@ include APP_ROOT . "/include/header.php";
     ?>
 
 </div>
-
+<?php  include APP_ROOT . "/include/footer.php"; ?>

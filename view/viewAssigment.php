@@ -39,10 +39,15 @@ if(isset($_GET["tarefa"])){
             </div>
         </div>
     </form>
-    <form action="../controller/deleteAssigment.php" method="post" onsubmit="return confirm('Deseja deletar a <?= $assigment->getName() ?>')" class="d-inline">
+    <?php 
+     if(Auth::isLogged(false)){
+         ?>
+         <form action="../controller/deleteAssigment.php" method="post" onsubmit="return confirm('Deseja deletar a <?= $assigment->getName() ?>')" class="d-inline">
             <input type="hidden" name="tarefa" value="<?= $assigment->getID() ?>">
             <button type="submit" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i> Deletar</button>
         </form>
+     <?php }
+    ?>
     </div>
 <?php
 }else{

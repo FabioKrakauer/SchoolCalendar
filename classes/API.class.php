@@ -8,7 +8,7 @@ class API{
     }
     public static function getMatters(){
         return [
-            "1" => "Matematica",
+            "1" => "Matemática",
             "2" => "História",
             "3" => "Geografia",
             "4" => "Educação Fisica",

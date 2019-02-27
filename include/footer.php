@@ -1,7 +1,7 @@
 
     <footer>
         <div class="col-12 bg-dark mt-3 text-white">
-            <h3 class="col-12 text-center mt-2 mb-2">Calendario Escolar</h3>
+            <h3 class="col-12 text-center mt-2 mb-2">Calendário Escolar</h3>
             <p class="text-center">&copy Desenvolvido por Fábio Krakauer</p>
         </div>
     </footer>

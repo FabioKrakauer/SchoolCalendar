@@ -16,7 +16,7 @@ require_once $dir.'/classes/Auth.class.php';
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/calendario"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</a>
+        <a class="navbar-brand" href="/calendario"><i class="fa fa-calendar" aria-hidden="true"></i> Calendário</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

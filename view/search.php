@@ -27,7 +27,7 @@ include APP_ROOT . "/include/header.php";
                 </select>
             </div>
             <div class="form-group col-12 col-md-4">
-                <label for="matter">Selecione uma materia</label>
+                <label for="matter">Selecione uma matéria</label>
                 <select name="matter" id="matter" class="form-control">
                 <option value="null">Selecione uma opção</option>
                     <?php 
@@ -44,7 +44,7 @@ include APP_ROOT . "/include/header.php";
             
         </div>
         <div class="container row">
-            <button class="btn btn-success"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Pesquisar</button>
+            <button class="btn btn-primary"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Pesquisar</button>
         </div>
     </form>
 
@@ -85,21 +85,40 @@ include APP_ROOT . "/include/header.php";
             <div class="row container">
             <?php while($row = $search->fetch()){
                 $assigment = new Assigment($row["id"]);
-            
+                $assigmentDay = strtotime($assigment->getDateConfirm());
+                $today = strtotime(date("Y-m-d"));
+                $tomorrow = strtotime("+1 day");
             ?>
             <div class="col-sm-12 col-md-4 mt-4">
             <div class="card">
-                <div class="card-header">
+                <?php
+                 if($assigmentDay < $today){
+                     echo '<div class="card-header bg-secondary text-white">';
+                 }else if($assigmentDay == $today){
+                     echo '<div class="card-header bg-danger text-white">';
+                 }else if($assigmentDay > $today && $assigmentDay <= $tomorrow){
+                     echo '<div class="card-header bg-warning">';
+                 }else{
+                    echo '<div class="card-header bg-success text-white">';
+                 }
+                 ?>
                     <?= $assigment->getName(); ?>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Para dia: <?= date("d/m/Y", strtotime($assigment->getDateConfirm())) ?></h4>
+                    <h4 class="card-title">Para o dia: <?= date("d/m/Y", strtotime($assigment->getDateConfirm())) ?></h4>
                     <p class="card-text"><a href="/calendario/view/viewAssigment.php?tarefa=<?= $assigment->getID() ?>" class="btn btn-primary"><i class="fa fa-info-circle" aria-hidden="true"></i> Detalhes</a></p>
                 </div>
             </div>
             </div>
         <?php }
         ?>
+        </div>
+        <!-- <h3 class="col-12">Legenda</h2> -->
+        <div class="container mt-3">
+            <label class="badge badge-secondary">Lições passadas</label>
+            <label class="badge badge-danger">Lições de hoje</label>
+            <label class="badge badge-warning">Lições de amanhã</label>
+            <label class="badge badge-success">Próximas lições</label>
         </div>
         <?php }
     ?>
